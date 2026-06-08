@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 50% 96%;
+    --foreground: 30 30% 15%;
+
+    --card: 42 45% 93%;
+    --card-foreground: 30 30% 15%;
+
+    --popover: 45 50% 96%;
+    --popover-foreground: 30 30% 15%;
+
+    --primary: 35 80% 45%;
+    --primary-foreground: 45 50% 96%;
+
+    --secondary: 40 40% 85%;
+    --secondary-foreground: 30 30% 15%;
+
+    --muted: 42 30% 90%;
+    --muted-foreground: 30 15% 45%;
+
+    --accent: 45 70% 65%;
+    --accent-foreground: 30 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 25% 82%;
+    --input: 35 25% 82%;
+    --ring: 35 80% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom café tokens */
+    --cafe-butter: 48 85% 78%;
+    --cafe-cream: 42 50% 92%;
+    --cafe-latte: 30 35% 55%;
+    --cafe-espresso: 25 40% 25%;
+    --cafe-caramel: 35 70% 50%;
+    --cafe-warm-glow: 40 90% 70%;
+    --cafe-gold: 42 80% 55%;
+
+    --sidebar-background: 42 45% 93%;
+    --sidebar-foreground: 30 30% 15%;
+    --sidebar-primary: 35 80% 45%;
+    --sidebar-primary-foreground: 45 50% 96%;
+    --sidebar-accent: 42 30% 88%;
+    --sidebar-accent-foreground: 30 30% 15%;
+    --sidebar-border: 35 25% 82%;
+    --sidebar-ring: 35 80% 45%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  .dark {
+    --background: 25 30% 8%;
+    --foreground: 42 30% 90%;
+    --card: 25 25% 12%;
+    --card-foreground: 42 30% 90%;
+    --popover: 25 25% 12%;
+    --popover-foreground: 42 30% 90%;
+    --primary: 35 80% 50%;
+    --primary-foreground: 25 30% 8%;
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 42 30% 90%;
+    --muted: 25 20% 18%;
+    --muted-foreground: 35 15% 55%;
+    --accent: 40 60% 40%;
+    --accent-foreground: 42 30% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 35 80% 50%;
+    --sidebar-background: 25 25% 10%;
+    --sidebar-foreground: 42 30% 90%;
+    --sidebar-primary: 35 80% 50%;
+    --sidebar-primary-foreground: 25 30% 8%;
+    --sidebar-accent: 25 20% 15%;
+    --sidebar-accent-foreground: 42 30% 90%;
+    --sidebar-border: 25 20% 20%;
+    --sidebar-ring: 35 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-family: var(--font-display);
+  }
+
+  .text-body {
+    font-family: var(--font-body);
+  }
+
+  .cafe-glow {
+    box-shadow: 0 0 60px 20px hsl(var(--cafe-warm-glow) / 0.3),
+                0 0 120px 40px hsl(var(--cafe-butter) / 0.15);
+  }
+
+  .cafe-shadow {
+    box-shadow: 0 20px 60px -15px hsl(var(--cafe-espresso) / 0.25),
+                0 10px 30px -10px hsl(var(--cafe-latte) / 0.2);
+  }
+
+  .cafe-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cafe-butter)) 0%,
+      hsl(var(--cafe-cream)) 50%,
+      hsl(var(--cafe-butter)) 100%
+    );
+  }
+
+  .cafe-gradient-warm {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--cafe-cream)) 0%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .steam-animation {
+    animation: steam 3s ease-in-out infinite;
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .parallax-layer {
+    will-change: transform;
+    transition: transform 0.1s linear;
+  }
+
+  .section-transition {
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+}
+
+@keyframes steam {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-20px) scaleX(1.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes coffeeFill {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--cafe-cream));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--cafe-latte));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--cafe-caramel));
+}
