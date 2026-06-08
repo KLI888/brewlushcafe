@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import heroCafe from "@/assets/hero-cafe.jpg";
 import mascot from "@/assets/mascot.png";
 
@@ -66,12 +67,20 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-col items-center gap-6"
         >
-          <a
-            href="#coffee-bar"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-primary-foreground font-body font-semibold text-lg hover:scale-105 transition-transform duration-300 cafe-shadow"
-          >
-            Enter the Café ☕
-          </a>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a
+              href="#coffee-bar"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-primary-foreground font-body font-semibold text-lg hover:scale-105 transition-transform duration-300 cafe-shadow"
+            >
+              Enter the Café ☕
+            </a>
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-border bg-card text-foreground font-body font-semibold text-lg hover:border-primary hover:text-primary transition-colors duration-300"
+            >
+              View gallery
+            </Link>
+          </div>
 
           {/* Scroll indicator */}
           <motion.div

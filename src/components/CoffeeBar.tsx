@@ -10,11 +10,11 @@ import specialImg from "@/assets/brewlush-special.jpg";
 import { Coffee } from "lucide-react";
 
 const drinks = [
-  { name: "Espresso", price: "$3.50", desc: "Bold & intense", image: espressoImg },
-  { name: "Cappuccino", price: "$4.50", desc: "Frothy perfection", image: cappuccinoImg },
-  { name: "Latte", price: "$5.00", desc: "Smooth & creamy", image: latteImg },
-  { name: "Cold Brew", price: "$4.00", desc: "Chilled & refreshing", image: coldBrewImg },
-  { name: "BrewLush Special", price: "$6.50", desc: "Our secret recipe", image: specialImg },
+  { name: "Espresso", price: "₹150", desc: "Bold & intense", image: espressoImg },
+  { name: "Cappuccino", price: "₹200", desc: "Frothy perfection", image: cappuccinoImg },
+  { name: "Latte", price: "₹220", desc: "Smooth & creamy", image: latteImg },
+  { name: "Cold Brew", price: "₹180", desc: "Chilled & refreshing", image: coldBrewImg },
+  { name: "BrewLush Special", price: "₹250", desc: "Our secret recipe", image: specialImg },
 ];
 
 const CoffeeBar = () => {
