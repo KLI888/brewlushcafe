@@ -6,6 +6,7 @@ import GalleryPreview from "@/components/GalleryPreview";
 import LoungeArea from "@/components/LoungeArea";
 import ContactDesk from "@/components/ContactDesk";
 import ScrollProgress from "@/components/ScrollProgress";
+import MenuPDF from "@/components/MenuPDF";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <HeroSection />
       <GalleryPreview />
       <CoffeeBar />
+      <MenuPDF />
       <ArtGallery />
       <EventZone />
       <LoungeArea />

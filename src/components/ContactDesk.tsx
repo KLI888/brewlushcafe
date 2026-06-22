@@ -135,7 +135,7 @@ const ContactDesk = () => {
                 </div>
                 <div>
                   <p className="text-body text-sm font-semibold text-foreground">Address</p>
-                  <p className="text-body text-sm text-muted-foreground">123 Brew Street, Coffee District</p>
+                  <p className="text-body text-sm text-muted-foreground">SB Patil School Rd, Limbavli corner, Ravet, Pimpri-Chinchwad, Maharashtra 412101</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -144,7 +144,7 @@ const ContactDesk = () => {
                 </div>
                 <div>
                   <p className="text-body text-sm font-semibold text-foreground">Phone</p>
-                  <p className="text-body text-sm text-muted-foreground">+1 (555) BREW-LUX</p>
+                  <p className="text-body text-sm text-muted-foreground">+91-9545459643</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
