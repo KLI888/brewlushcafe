@@ -1,7 +1,8 @@
 import React from "react";
 
 const MenuPDF: React.FC = () => {
-  const pdfUrl = new URL("../assets/cafe pdf.pdf", import.meta.url).href;
+  const pdfFilename = "cafe pdf.pdf";
+  const pdfUrl = new URL(`../assets/${pdfFilename}`, import.meta.url).href;
 
   return (
     <section className="max-w-4xl mx-auto my-12 px-4">
@@ -14,7 +15,7 @@ const MenuPDF: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-500 text-white rounded-md hover:bg-amber-600"
           >
-            Open PDF
+            Open {pdfFilename}
           </a>
         </div>
 
@@ -22,7 +23,9 @@ const MenuPDF: React.FC = () => {
           <iframe src={pdfUrl} className="w-full h-full" title="Cafe Menu PDF" />
         </div>
 
-        <p className="mt-3 text-sm text-slate-600">Open in a new tab or download the PDF for offline viewing.</p>
+        <p className="mt-3 text-sm text-slate-600">
+          Open in a new tab or download <span className="font-medium">{pdfFilename}</span> for offline viewing.
+        </p>
       </div>
     </section>
   );
